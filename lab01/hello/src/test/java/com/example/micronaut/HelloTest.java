@@ -33,4 +33,9 @@ class HelloTest {
         assertEquals("Hello World", response);
     }
 
+    @Test
+    void testHelloWithWhitespaces() {
+        String response = httpClient.toBlocking().retrieve("/hello/World%20with%20Whitespaces");
+        assertEquals("Hello World with Whitespaces", response);
+    }
 }
